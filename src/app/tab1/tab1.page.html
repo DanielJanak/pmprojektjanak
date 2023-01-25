@@ -1,0 +1,109 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu Content</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item button detail="false" [routerLink]="['favourite']">
+        <!-- routerLink se řeší přes app-routing.module.ts -->
+        <ion-label>
+          <h3>Favourite</h3>
+          <p>Přesuňte se do favourite</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content padding> <!--class="ion-padding" -->
+    <ion-item>
+      <ion-label> <img class="vyska" alt="Název obrázku" src="{{obrazky.join('')}}" /> </ion-label>
+    </ion-item>
+    <!-- <a href="../pages/favourite/favourite.page.html">hello</a> -->
+    <ion-card class="dole">
+      <!--       <ion-card-header>
+        <ion-card-title>Ovládací panel.....</ion-card-title>
+        <p>Random: Zobrazí náhodný obrázek<br>Vyber: Umožní vybrat rasu</p>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      </ion-card-header> -->
+      <ion-item>
+        <h2 slot="start">Ovládací panel</h2>
+        <ion-button slot="end" size="medium" (click)="ngOnFavourite()">
+          <ion-icon name="star">
+            Jmeno
+          </ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <p>Random: Zobrazí náhodný obrázek psa<br>Výběr: Umožní výběr rasy<br>Hvězdička: Přidání obrázku k oblíbeným</p>
+      </ion-item>
+
+      <ion-grid> <!--[fixed]="true"-->
+        <ion-row>
+          <ion-button class="polovina" expand="full" shape="round" color="success" (click)="ngOnInit()">
+            <h1>Random</h1>
+          </ion-button>
+          <ion-button id="open-modal" class="polovina" expand="full" shape="round" color="warning" (click)="ngOnVyber()">
+            <h1>Výběr</h1>
+          </ion-button>
+          <ion-modal #modal trigger="open-modal">
+            <ng-template>
+              <ion-content>
+                <ion-toolbar>
+                  <ion-title>Zvolte odrůdu psa:</ion-title>
+                  <ion-buttons slot="end">
+                    <ion-button color="primary" (click)="modal.dismiss()">Close</ion-button>
+                  </ion-buttons>
+                </ion-toolbar>
+                <!-- <ion-list>
+                  <ion-item button *ngFor="let item of obrazky">  
+                    <ion-avatar slot="end" class="velikostavatara">
+                      <img [src]="item" />
+                    </ion-avatar>
+                  </ion-item>
+                </ion-list> -->
+              </ion-content>
+            </ng-template>
+          </ion-modal>
+        </ion-row>
+      </ion-grid>
+
+
+
+    </ion-card>
+  </ion-content>
+</div>
+<!--
+<ion-content>
+  <ion-list>
+    <ion-title color="primary">
+      Dog pictures sexy
+    </ion-title>
+    <ion-item>
+      <ion-label> <img alt="Název obrázku" src="{{obrazky.join('')}}" /> </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+-->
+
+
+
+<!--<ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <app-explore-container name="Tab 1 page"></app-explore-container>  //vnitřek ion-contentu původně-->

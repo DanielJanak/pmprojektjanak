@@ -1,0 +1,1 @@
+//toto je připravená složka na práci s modelem (protože budu využívat fotky)

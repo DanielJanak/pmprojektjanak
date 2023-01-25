@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Favourites</ion-title>
+    <ion-button slot="end" color="danger" size="small" class="vymazatbutton" (click)="ngVymazatLocalStorage()">
+      <ion-text color="dark">
+        Vymazat favourites
+      </ion-text>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <!-- <ion-col>
+        <ion-list>
+          <ion-item button *ngFor="let item of seznamfavouriteodrudy">
+            <p class="velikostavatara">Text</p>
+          </ion-item>
+        </ion-list>
+      </ion-col> -->
+      <ion-col>
+        <ion-list>
+          <ion-item button *ngFor="let item of seznamfavourite" [routerLink]="['../']">  
+            <ion-avatar slot="end" class="velikostavatara">
+              <img [src]="item" />
+            </ion-avatar>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+
+
+
+
+
+
+<!-- <ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item button *ngFor="let item of seznamfavouriteodrudy">
+            <p class="velikostavatara">Text</p>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col>
+        <ion-list>
+          <ion-item button *ngFor="let item of seznamfavourite">
+            <ion-avatar slot="end" class="velikostavatara">
+              <img [src]="item" />
+            </ion-avatar>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content> -->
